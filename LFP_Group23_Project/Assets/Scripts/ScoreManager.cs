@@ -5,15 +5,14 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance;
 
-    public TextMeshPro scoreText;   // drag your UI Text here
-    public TextMeshPro highScoreText; // optional
+    public TextMeshPro scoreText; 
+   // public TextMeshPro highScoreText; // optional
 
     private int score = 0;
     private int highScore = 0;
 
     void Awake()
     {
-        // Simple singleton so enemies/combat can find us easily
         if (Instance == null) Instance = this;
         else { Destroy(gameObject); return; }
     }
@@ -46,6 +45,6 @@ public class ScoreManager : MonoBehaviour
     private void UpdateUI()
     {
         if (scoreText != null) scoreText.text = "Score: " + score;
-        if (highScoreText != null) highScoreText.text = "High: " + highScore;
+      //  if (highScoreText != null) highScoreText.text = "High: " + highScore;
     }
 }

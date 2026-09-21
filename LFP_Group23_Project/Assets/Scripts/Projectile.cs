@@ -14,7 +14,6 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        // Default direction: toward the player's left/right. Adjust as needed.
         direction = transform.right;
     }
 
@@ -37,7 +36,6 @@ public class Projectile : MonoBehaviour
 
         isDeflected = true;
         direction = -direction; // reverse it
-        // Optionally boost speed so it feels satisfying
         speed *= 1.5f;
 
         // Flip sprite so it visually points back
@@ -65,7 +63,7 @@ public class Projectile : MonoBehaviour
             // Normal projectiles damage the player
             if (other.CompareTag("Player"))
             {
-                // Hook into your player health here
+                // player health here
                 // other.GetComponent<PlayerHealth>()?.TakeDamage(damageToPlayer);
                 Destroy(gameObject);
             }

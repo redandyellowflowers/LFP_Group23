@@ -9,7 +9,7 @@ public class CameraFollowScript : MonoBehaviour
     public float followSpeed = 2f;
     public float yOffset = 1f;
     public float xOffset = 0f;
-    public float cameraFOV = 10f;
+    public float cameraFOV;
 
     private void Awake()
     {

@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class CharacterControllerScript_Miguel : MonoBehaviour
@@ -10,6 +11,8 @@ public class CharacterControllerScript_Miguel : MonoBehaviour
 
     private float horizontalMove = 0f;
     private bool jump = false;
+
+    //public TextMeshProUGUI sigText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -37,4 +40,15 @@ public class CharacterControllerScript_Miguel : MonoBehaviour
         characterController.Move(horizontalMove * Time.fixedDeltaTime, jump);
         jump = false;
     }
+
+    /*
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            sigText.enabled = true;
+        }
+        else { sigText.enabled = false; }
+    }
+    */
 }

@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 2294893351328126340}
   - component: {fileID: 8497371870796404138}
   - component: {fileID: 5982307480318222452}
-  m_Layer: 0
+  - component: {fileID: 1357938408293548344}
+  m_Layer: 6
   m_Name: BulletPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,6 +111,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ccc1303733ecca479943c969dcce329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1357938408293548344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4543454869500273444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2df245cbbdc8a9449ec3ed0998d5cb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  speed: 0
+  lightHitPoints: 0
+  heavyHitPoints: 0
 --- !u!1 &6697871125648100834
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,7 +137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6570988291768406976}
   - component: {fileID: 3051937758418929484}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Graphic
   m_TagString: Untagged
   m_Icon: {fileID: 0}

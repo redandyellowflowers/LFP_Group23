@@ -18,7 +18,7 @@ public class PlayerCombatSystem : MonoBehaviour
     public bool flipSprite = true;        // flip the player to face the cursor horizontally
 
     [Header("Crosshair")]
-    public Transform crosshair;           // drag your crosshair GameObject here
+    public Transform crosshair;           
     public Vector3 crosshairOffset = Vector3.zero;
     public bool hideSystemCursor = true;  // hide the OS cursor while playing
 

@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class Enemy : MonoBehaviour
 {
     public int health;
-    public float speed;
+  //  public float speed;
 
     [Header("Score Values")]
     public int lightHitPoints = 10;   // points awarded for a light hit

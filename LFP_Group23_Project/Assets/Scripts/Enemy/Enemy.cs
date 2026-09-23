@@ -4,13 +4,17 @@ using UnityEngine.SceneManagement;
 public class Enemy : MonoBehaviour
 {
     public int health;
-  //  public float speed;
+    //  public float speed;
 
     [Header("Score Values")]
     public int lightHitPoints = 10;   // points awarded for a light hit
     public int heavyHitPoints = 25;   // points awarded for a heavy hit
 
+    // NEW: notified when any enemy is destroyed
+    public static System.Action<Enemy> OnEnemyDestroyed;
+
     private Animator anim;
+    private bool isDead = false;   // NEW: guards against double-firing
 
     void Start()
     {
@@ -19,8 +23,10 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        if (health <= 0)
+        if (health <= 0 && !isDead)
         {
+            isDead = true;
+            OnEnemyDestroyed?.Invoke(this);
             Destroy(gameObject);
         }
     }

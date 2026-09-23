@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class UIScript : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject rules;
 
     void Update()
     {
@@ -13,7 +14,13 @@ public class UIScript : MonoBehaviour
         {
             pauseMenu.SetActive(true);
         }
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            rules.SetActive(true);
+        }
     }
+
+
 
     public void Mainmenu()
     {
@@ -25,6 +32,10 @@ public class UIScript : MonoBehaviour
         pauseMenu.SetActive(false);
     }
 
+    public void exit()
+    {
+        rules.SetActive(false);
+    }
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

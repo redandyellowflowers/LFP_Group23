@@ -1,0 +1,31 @@
+using UnityEngine;
+
+public class DamagePointScript : MonoBehaviour
+{
+    private GameObject spawnPoint;
+
+    private void Awake()
+    {
+        spawnPoint = GameObject.Find("SpawnPoint");
+    }
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Player"))
+        {
+            collision.gameObject.transform.position = spawnPoint.transform.position;
+        }
+    }
+}

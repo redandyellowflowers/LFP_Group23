@@ -12,6 +12,11 @@ public class CharacterControllerScript_Miguel : MonoBehaviour
     private float horizontalMove = 0f;
     private bool jump = false;
 
+    private void Awake()
+    {
+        spawnPoint = GameObject.Find("SpawnPoint");
+    }
+
     //public TextMeshProUGUI sigText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

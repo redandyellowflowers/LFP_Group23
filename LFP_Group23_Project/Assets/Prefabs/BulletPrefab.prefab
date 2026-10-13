@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2294893351328126340}
   - component: {fileID: 8497371870796404138}
   - component: {fileID: 5982307480318222452}
-  - component: {fileID: 1357938408293548344}
   m_Layer: 6
   m_Name: BulletPrefab
   m_TagString: Untagged
@@ -30,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6570988291768406976}
@@ -111,22 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ccc1303733ecca479943c969dcce329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1357938408293548344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4543454869500273444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2df245cbbdc8a9449ec3ed0998d5cb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 10
-  speed: 0
-  lightHitPoints: 0
-  heavyHitPoints: 0
+  timeBeforeSelfDestroy: 2
+  spawnPoint: {fileID: 0}
 --- !u!1 &6697871125648100834
 GameObject:
   m_ObjectHideFlags: 0

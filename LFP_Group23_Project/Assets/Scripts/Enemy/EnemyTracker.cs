@@ -52,7 +52,7 @@ public class EnemyTracker : MonoBehaviour
         if (enemiesAlive <= 0)
         {
             levelComplete = true;
-            Invoke(nameof(LoadNextLevel), delayBeforeNextLevel);
+            //Invoke(nameof(LoadNextLevel), delayBeforeNextLevel);
         }
     }
 

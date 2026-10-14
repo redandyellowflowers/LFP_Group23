@@ -1,7 +1,12 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndPointScript : MonoBehaviour
 {
+    public bool lastLEvel = false;
+
+    public string sceneName;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,6 +24,10 @@ public class EndPointScript : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Debug.Log("Winner");
+
+            if (!lastLEvel)
+            { SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1); }
+            else { SceneManager.LoadSceneAsync(sceneName); }
         }
     }
 }

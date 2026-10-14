@@ -6,14 +6,17 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager Instance;
 
     public TextMeshProUGUI scoreText; 
-   // public TextMeshPro highScoreText; // optional
 
     private int score = 0;
     private int highScore = 0;
 
     void Awake()
     {
-        if (Instance == null) Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);   
+        }
         else { Destroy(gameObject); return; }
     }
 
@@ -45,6 +48,5 @@ public class ScoreManager : MonoBehaviour
     private void UpdateUI()
     {
         if (scoreText != null) scoreText.text = "Score: " + score;
-      //  if (highScoreText != null) highScoreText.text = "High: " + highScore;
     }
 }

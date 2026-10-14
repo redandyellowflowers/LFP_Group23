@@ -1,20 +1,21 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
     public int health;
-    //  public float speed;
 
     [Header("Score Values")]
-    public int lightHitPoints = 10;   // points awarded for a light hit
-    public int heavyHitPoints = 25;   // points awarded for a heavy hit
+    public int lightHitPoints = 10;
+    public int heavyHitPoints = 25;
 
-    // NEW: notified when any enemy is destroyed
+    [Header("Drop")]
+    public GameObject scorePickupPrefab;   // CHANGED: assign in inspector
+    public int pickupDropValue = 50;       // CHANGED: points given when collected
+
     public static System.Action<Enemy> OnEnemyDestroyed;
 
     private Animator anim;
-    private bool isDead = false;   // NEW: guards against double-firing
+    private bool isDead = false;
 
     void Start()
     {
@@ -26,22 +27,25 @@ public class Enemy : MonoBehaviour
         if (health <= 0 && !isDead)
         {
             isDead = true;
+            SpawnPickup();                 // CHANGED
             OnEnemyDestroyed?.Invoke(this);
             Destroy(gameObject);
         }
     }
 
-    // isHeavy tells us whether the attack was a light or heavy one
+    // CHANGED: spawn the pickup at the enemy's position
+    void SpawnPickup()
+    {
+        if (scorePickupPrefab == null) return;
+        GameObject go = Instantiate(scorePickupPrefab, transform.position, Quaternion.identity);
+        var pickup = go.GetComponent<ScorePickup>();
+        if (pickup != null) pickup.scoreValue = pickupDropValue;
+    }
+
     public void TakeDamage(int damage, bool isHeavy = false)
     {
         health -= damage;
-
-        // Award points to the player for landing a hit
-        if (ScoreManager.Instance != null)
-        {
-            ScoreManager.Instance.AddScore(isHeavy ? heavyHitPoints : lightHitPoints);
-        }
-
+        // collecting the dropped pickup, not from hitting.
         Debug.Log((isHeavy ? "Heavy" : "Light") + " damage taken. Health: " + health);
     }
 }

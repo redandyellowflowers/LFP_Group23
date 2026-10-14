@@ -7,11 +7,12 @@ public class EnemyTracker : MonoBehaviour
     public string nextSceneName = "";
 
     [Tooltip("Delay (seconds) after the last enemy dies before loading.")]
-    public float delayBeforeNextLevel = 1.5f;
+    public float delayBeforeNextLevel = 2f;
 
     private int enemiesAlive = 0;
     private bool levelComplete = false;
     private bool registered = false;
+    public static string NextLevelAfterShop = "";
 
     void OnEnable()
     {
@@ -25,7 +26,6 @@ public class EnemyTracker : MonoBehaviour
 
     void Start()
     {
-        // Wait one frame so all enemies' Awake/Start have run
         StartCoroutine(CountEnemiesNextFrame());
     }
 
@@ -58,17 +58,16 @@ public class EnemyTracker : MonoBehaviour
 
     private void LoadNextLevel()
     {
-        if (!string.IsNullOrEmpty(nextSceneName))
+        // Store the *name* of the real next level so ShopScene can load it.
+        // If nextSceneName is set, use it. Otherwise, this is the last level.
+        NextLevelAfterShop = nextSceneName;
+
+        if (string.IsNullOrEmpty(NextLevelAfterShop))
         {
-            SceneManager.LoadScene(nextSceneName);
+            Debug.Log("[EnemyTracker] No next level set — you beat the game!");
+            return;   // don't load the shop if there's nowhere to go after
         }
-        else
-        {
-            int nextIndex = SceneManager.GetActiveScene().buildIndex + 1;
-            if (nextIndex < SceneManager.sceneCountInBuildSettings)
-                SceneManager.LoadScene(nextIndex);
-            else
-                Debug.Log("No more levels — you beat the game!");
-        }
+
+        SceneManager.LoadScene("ShopScene");
     }
 }

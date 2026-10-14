@@ -257,6 +257,8 @@ MonoBehaviour:
   health: 50
   lightHitPoints: 10
   heavyHitPoints: 25
+  scorePickupPrefab: {fileID: 112005996814551793, guid: 7b03be5b57de78f4ca0130ed21ebab05, type: 3}
+  pickupDropValue: 50
 --- !u!1 &6195971303943365247
 GameObject:
   m_ObjectHideFlags: 0

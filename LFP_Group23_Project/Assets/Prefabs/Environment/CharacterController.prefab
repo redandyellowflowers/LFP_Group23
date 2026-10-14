@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 1296742437804386769}
   - component: {fileID: 8379162513469794250}
   - component: {fileID: 3177649123980295417}
+  - component: {fileID: -8869770825819886060}
   - component: {fileID: 7334387346613849514}
   - component: {fileID: 6795629155799681394}
   - component: {fileID: 4756879282831177206}
+  - component: {fileID: -4360735626145047111}
   m_Layer: 0
   m_Name: CharacterController
   m_TagString: Player
@@ -53,7 +55,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 8379162513469794250}
-  spawnPoint: {fileID: 0}
+  spawnPoint: {fileID: 8847031872610314728, guid: cf34fa04fb6fa6c47831c0bf2f5b6e48, type: 3}
   runSpeed: 40
 --- !u!114 &8379162513469794250
 MonoBehaviour:
@@ -86,18 +88,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 906138328c3c2094ea63d089687290e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTimeBtwLightAttack: 0.3
-  lightDamage: 10
-  lightAttackRange: 20
-  startTimeBtwHeavyAttack: 0.8
-  heavyDamage: 20
-  heavyAttackRange: 12.5
+  attackCooldown: 0.3
+  damage: 10
   minSwipeDistance: 0.8
   maxSwipeDuration: 0.4
   swipeSamplePoints: 12
-  lightBladeRadius: 0.15
-  heavyBladeRadius: 0.25
-  attackDistance: 0
+  bladeRadius: 0.2
   flipSprite: 1
   crosshair: {fileID: 0}
   crosshairOffset: {x: 0, y: 0, z: 0}
@@ -108,6 +104,22 @@ MonoBehaviour:
   whatIsProjectiles:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &-8869770825819886060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86587495617571661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d92082a0c54b592489179b38faec020f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
+  currentHealth: 0
+  armor: 0
+  invulnDuration: 1
 --- !u!70 &7334387346613849514
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -208,6 +220,18 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 19.97
+--- !u!114 &-4360735626145047111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86587495617571661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc472e09ed8880740b823604e62b598e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2095093629127262087
 GameObject:
   m_ObjectHideFlags: 0

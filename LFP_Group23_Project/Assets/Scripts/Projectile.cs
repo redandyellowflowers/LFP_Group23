@@ -50,7 +50,6 @@ public class Projectile : MonoBehaviour
     {
         if (isDeflected)
         {
-            // Deflected projectiles damage enemies
             Enemy e = other.GetComponent<Enemy>();
             if (e != null)
             {
@@ -60,11 +59,11 @@ public class Projectile : MonoBehaviour
         }
         else
         {
-            // Normal projectiles damage the player
             if (other.CompareTag("Player"))
             {
-                // player health here
-                // other.GetComponent<PlayerHealth>()?.TakeDamage(damageToPlayer);
+                // CHANGED: apply damage to PlayerHealth
+                var ph = other.GetComponent<PlayerHealth>();
+                if (ph != null) ph.TakeDamage(damageToPlayer);
                 Destroy(gameObject);
             }
         }

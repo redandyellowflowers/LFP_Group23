@@ -11,13 +11,13 @@ public class PowerUpShop : MonoBehaviour
 
     [Header("UI")]
     public TextMeshProUGUI scoreText;
-    public Transform offerContainer;       // parent for the 3 cards
-    public GameObject offerCardPrefab;     // a prefab with icon, name, desc, cost, buy button
+    public Transform offerContainer;     
+    public GameObject offerCardPrefab;     
 
     [Header("Behaviour")]
     public int offersToShow = 3;
     public bool allowReroll = true;
-    public int rerollCost = 50;
+    public int rerollCost = 10;
 
     private List<PowerUpData> currentOffers = new List<PowerUpData>();
     private int availableScore;
@@ -37,11 +37,19 @@ public class PowerUpShop : MonoBehaviour
 
     void RollOffers()
     {
-        // Clean old
         foreach (Transform child in offerContainer)
             Destroy(child.gameObject);
 
         currentOffers.Clear();
+
+        // NEW: null guard so we don't crash if PowerUpManager is missing.
+        if (PowerUpManager.Instance == null)
+        {
+            Debug.LogError("[PowerUpShop] PowerUpManager.Instance is NULL. " +
+                           "Make sure there's exactly one PowerUpManager and it lives in the Main Menu scene.");
+            return;
+        }
+
         var pool = new List<PowerUpData>(PowerUpManager.Instance.allPowerUps);
 
         // Filter out ones the player already owns (optional — comment out to allow stacking)
@@ -57,7 +65,6 @@ public class PowerUpShop : MonoBehaviour
         foreach (var offer in currentOffers)
             CreateCard(offer);
     }
-
     void CreateCard(PowerUpData data)
     {
         GameObject cardGO = Instantiate(offerCardPrefab, offerContainer);
@@ -68,39 +75,47 @@ public class PowerUpShop : MonoBehaviour
     }
 
     bool CanAfford(PowerUpData data) => availableScore >= data.cost;
-
     void TryBuy(PowerUpData data)
     {
-        if (availableScore < data.cost) return;
+        Debug.Log($"[PowerUpShop] TryBuy called for '{data.powerUpName}'. availableScore={availableScore}, cost={data.cost}"); // existing
+
+        if (availableScore < data.cost) { Debug.Log("[PowerUpShop] Can't afford."); return; }   // NEW log
+
+        if (PowerUpManager.Instance == null)                                                    // NEW guard
+        {
+            Debug.LogError("[PowerUpShop] PowerUpManager.Instance is NULL!");
+            return;
+        }
 
         availableScore -= data.cost;
-        PowerUpManager.Instance.AddPowerUp(data);
+        Debug.Log($"[PowerUpShop] Deducted. availableScore now {availableScore}");               // NEW
 
-        // Update ScoreManager so the HUD score reflects the spend
+        PowerUpManager.Instance.AddPowerUp(data);
+        Debug.Log("[PowerUpShop] Called AddPowerUp.");                                           // NEW
+
         if (ScoreManager.Instance != null)
         {
-            // Reset then re-add the remaining score
             ScoreManager.Instance.ResetScore();
             ScoreManager.Instance.AddScore(availableScore);
+            Debug.Log("[PowerUpShop] ScoreManager updated.");                                    // NEW
         }
+        else Debug.LogError("[PowerUpShop] ScoreManager.Instance is NULL!");                     // NEW
 
         RefreshUI();
-        RollOffers(); // re-roll remaining offers after a purchase (optional)
-    }
+        Debug.Log("[PowerUpShop] Refreshed UI.");                                                // NEW
 
+        RollOffers();
+        Debug.Log("[PowerUpShop] Rolled offers.");                                               // NEW
+    }
     public void Reroll()
     {
-        if (!allowReroll || availableScore < rerollCost) return;
-        availableScore -= rerollCost;
-
-        if (ScoreManager.Instance != null)
+        if (PowerUpManager.Instance == null)
         {
-            ScoreManager.Instance.ResetScore();
-            ScoreManager.Instance.AddScore(availableScore);
+            Debug.LogError("[PowerUpShop] Cannot reroll: PowerUpManager.Instance is NULL.");
+            return;
         }
 
-        RefreshUI();
-        RollOffers();
+        if (!allowReroll || availableScore < rerollCost) return;
     }
 
     /*   public void Continue()

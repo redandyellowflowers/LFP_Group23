@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Armor
   m_EditorClassIdentifier: 
   powerUpName: Armor
-  description: Does something cool.
+  description: Gives you extra health
   icon: {fileID: 0}
-  cost: 100
+  cost: 50
   rarity: 0
   type: 4
   amount: 3

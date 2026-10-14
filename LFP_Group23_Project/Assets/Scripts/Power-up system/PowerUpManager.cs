@@ -16,14 +16,15 @@ public class PowerUpManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);   
         }
         else
         {
             Destroy(gameObject);
+            return;
         }
     }
-   
+
     public bool HasPowerUp(PowerUpData data) => ownedPowerUps.Contains(data);
 
     public void AddPowerUp(PowerUpData data)
@@ -46,7 +47,6 @@ public class PowerUpManager : MonoBehaviour
         return 1f + total;
     }
 
-    // Called by GameBootstrap (see below) at level start to apply effects.
     public void ApplyToAllPlayersInScene()
     {
         var player = GameObject.FindWithTag("Player");

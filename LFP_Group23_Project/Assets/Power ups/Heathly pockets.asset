@@ -15,7 +15,7 @@ MonoBehaviour:
   powerUpName: 'Healthy pockets '
   description: Increase in the coin
   icon: {fileID: 0}
-  cost: 100
+  cost: 50
   rarity: 1
   type: 5
   amount: 0.1

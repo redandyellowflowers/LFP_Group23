@@ -1,13 +1,9 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyBehaviourScript : MonoBehaviour
 {
     [Header("player")]
     public GameObject player;
-
-    [HideInInspector]
-    public bool hasLineOfSight = false;
 
     [Header("weapon gameObjects")]
     public GameObject firePoint;
@@ -33,36 +29,23 @@ public class EnemyBehaviourScript : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
+        if (player == null) return;
         playerPos = player.transform.position;
-
-        if (player != null)
-        {
-            Aim();
-            Shooting();
-        }
+        Aim();
+        Shooting();
     }
 
     public void Aim()
     {
-        if (player != null)
-        {
-            distance = Vector2.Distance(transform.position, player.transform.position);
+        distance = Vector2.Distance(transform.position, player.transform.position);
 
-            if (distance < detectionRadius)
-            {
-                Vector2 lookDirection = playerPos - weaponRigidbody.position;
-                float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
-                weaponRigidbody.rotation = angle;
-            }
+        if (distance < detectionRadius)
+        {
+            Vector2 lookDirection = playerPos - weaponRigidbody.position;
+            float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
+            weaponRigidbody.rotation = angle;
         }
     }
 

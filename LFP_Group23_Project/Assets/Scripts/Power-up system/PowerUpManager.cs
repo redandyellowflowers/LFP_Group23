@@ -61,9 +61,9 @@ public class PowerUpManager : MonoBehaviour
         var combat = player.GetComponent<PlayerCombatSystem>();
         if (combat != null)
         {
-            combat.damage = Mathf.RoundToInt(10 * GetMultiplier(PowerUpType.Damage));
+            /*combat.damage = Mathf.RoundToInt(10 * GetMultiplier(PowerUpType.Damage));
             combat.attackCooldown = 0.3f / GetMultiplier(PowerUpType.AttackCooldown);
-            combat.bladeRadius = 0.2f * GetMultiplier(PowerUpType.BladeRadius);
+            combat.bladeRadius = 0.2f * GetMultiplier(PowerUpType.BladeRadius);*/
         }
 
         // Armor — each Armor power-up grants +1 armor (amount treated as a flat count)

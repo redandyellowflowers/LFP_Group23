@@ -3,7 +3,7 @@ using UnityEngine;
 public class ScorePickup : MonoBehaviour
 {
     public int scoreValue = 10;
-    public float pickupRadius = 1.5f;    // player must be this close to grab it
+    public float pickupRadius = 1.5f;    
     public float moveSpeed = 6f;
     public float lifetime = 15f;
 

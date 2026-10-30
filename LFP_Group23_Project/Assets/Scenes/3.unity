@@ -399,6 +399,8 @@ MonoBehaviour:
   health: 10
   lightHitPoints: 20
   heavyHitPoints: 25
+  scorePickupPrefab: {fileID: 0}
+  pickupDropValue: 50
 --- !u!114 &319813001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -454,6 +456,8 @@ MonoBehaviour:
   pointA: {fileID: 2111103163}
   pointB: {fileID: 475906976}
   speed: 5
+  scorePickupPrefab: {fileID: 0}
+  pickupDropValue: 50
 --- !u!70 &319813004
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1282,6 +1286,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d26ebfe73d5cf334585fd900559f633a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scorePickupPrefab: {fileID: 112005996814551793, guid: 7b03be5b57de78f4ca0130ed21ebab05, type: 3}
+  pickupDropValue: 50
 --- !u!61 &792427658
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2554,7 +2560,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  hasLineOfSight: 0
   firePoint: {fileID: 415241455}
   bulletPrefab: {fileID: 4543454869500273444, guid: 394416e10eeb5164d801c5dce322d88d, type: 3}
   bulletForce: 20
@@ -2760,7 +2765,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  hasLineOfSight: 0
   firePoint: {fileID: 1220608837}
   bulletPrefab: {fileID: 4543454869500273444, guid: 394416e10eeb5164d801c5dce322d88d, type: 3}
   bulletForce: 20
@@ -2903,6 +2907,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d26ebfe73d5cf334585fd900559f633a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scorePickupPrefab: {fileID: 112005996814551793, guid: 7b03be5b57de78f4ca0130ed21ebab05, type: 3}
+  pickupDropValue: 50
 --- !u!61 &1639807701
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3033,8 +3039,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 849c3ed543eb0194aaef331c8301f06d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: 
-  delayBeforeNextLevel: 1.5
 --- !u!4 &1661665455
 Transform:
   m_ObjectHideFlags: 0
@@ -3187,7 +3191,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  hasLineOfSight: 0
   firePoint: {fileID: 567153912}
   bulletPrefab: {fileID: 4543454869500273444, guid: 394416e10eeb5164d801c5dce322d88d, type: 3}
   bulletForce: 20
@@ -3595,6 +3598,8 @@ MonoBehaviour:
   pointA: {fileID: 1576761320}
   pointB: {fileID: 676979680}
   speed: 5
+  scorePickupPrefab: {fileID: 0}
+  pickupDropValue: 50
 --- !u!50 &6459173432839178940
 Rigidbody2D:
   serializedVersion: 5
@@ -3650,6 +3655,8 @@ MonoBehaviour:
   health: 10
   lightHitPoints: 20
   heavyHitPoints: 25
+  scorePickupPrefab: {fileID: 0}
+  pickupDropValue: 50
 --- !u!212 &6940680822123458255
 SpriteRenderer:
   m_ObjectHideFlags: 0

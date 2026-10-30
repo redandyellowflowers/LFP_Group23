@@ -4,12 +4,14 @@ public class Projectile : MonoBehaviour
 {
     public float speed = 5f;
     public int damageToPlayer = 10;
-    public int damageToEnemy = 15;
+    public int damageToEnemy = 15; 
     public float lifeTime = 5f;
 
     private Vector2 direction;
     private bool isDeflected = false;
     private Rigidbody2D rb;
+
+    public bool IsDeflected => isDeflected;
 
     void Start()
     {
@@ -29,19 +31,24 @@ public class Projectile : MonoBehaviour
         else transform.Translate(direction * speed * Time.deltaTime);
     }
 
-    // Called by the player's heavy attack
     public void Deflect()
     {
-        if (isDeflected) return; // already deflected, ignore
+        Deflect(-direction);
+    }
+
+    public void Deflect(Vector2 newDirection)
+    {
+        if (isDeflected) return; 
 
         isDeflected = true;
-        direction = -direction; // reverse it
+        direction = newDirection.normalized; 
         speed *= 1.5f;
 
-        // Flip sprite so it visually points back
-        Vector3 s = transform.localScale;
-        s.x *= -1;
-        transform.localScale = s;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, angle);
+
+        var sr = GetComponent<SpriteRenderer>();
+        if (sr != null) sr.color = new Color(1f, 0.6f, 0f, 1f);
 
         Debug.Log("Projectile deflected!");
     }
@@ -53,19 +60,18 @@ public class Projectile : MonoBehaviour
             Enemy e = other.GetComponent<Enemy>();
             if (e != null)
             {
-                e.TakeDamage(damageToEnemy, true);
-                Destroy(gameObject);
+                direction = new Vector2(-direction.x, direction.y); 
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.Euler(0f, 0f, angle);
             }
+            return;
         }
-        else
+
+        if (other.CompareTag("Player"))
         {
-            if (other.CompareTag("Player"))
-            {
-                // CHANGED: apply damage to PlayerHealth
-                var ph = other.GetComponent<PlayerHealth>();
-                if (ph != null) ph.TakeDamage(damageToPlayer);
-                Destroy(gameObject);
-            }
+            var ph = other.GetComponent<PlayerHealth>();
+            if (ph != null) ph.TakeDamage(damageToPlayer);
+            Destroy(gameObject);
         }
     }
 }

@@ -44,7 +44,8 @@ public class PowerUpShop : MonoBehaviour
 
         if (PowerUpManager.Instance == null)
         {
-            Debug.LogError("[PowerUpShop] PowerUpManager.Instance is NULL.");
+            Debug.LogError("[PowerUpShop] PowerUpManager.Instance is NULL. " +
+                           "Make sure there's exactly one PowerUpManager and it lives in the Main Menu scene.");
             return;
         }
 
@@ -75,7 +76,11 @@ public class PowerUpShop : MonoBehaviour
     void TryBuy(PowerUpData data)
     {
         if (availableScore < data.cost) return;
-        if (PowerUpManager.Instance == null) return;
+        if (PowerUpManager.Instance == null)
+        {
+            Debug.LogError("[PowerUpShop] PowerUpManager.Instance is NULL!");
+            return;
+        }
 
         availableScore -= data.cost;
         PowerUpManager.Instance.AddPowerUp(data);

@@ -309,6 +309,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
+  lightHitPoints: 10
+  heavyHitPoints: 25
   scorePickupPrefab: {fileID: 112005996814551793, guid: 7b03be5b57de78f4ca0130ed21ebab05, type: 3}
   pickupDropValue: 50
 --- !u!114 &319813001
@@ -318,7 +320,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 319812998}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2dd33bf596670884196d789f514b8e8b, type: 3}
   m_Name: 
@@ -366,6 +368,8 @@ MonoBehaviour:
   pointA: {fileID: 2111103163}
   pointB: {fileID: 475906976}
   speed: 5
+  scorePickupPrefab: {fileID: 112005996814551793, guid: 7b03be5b57de78f4ca0130ed21ebab05, type: 3}
+  pickupDropValue: 50
 --- !u!70 &319813004
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -612,6 +616,7 @@ GameObject:
   m_Component:
   - component: {fileID: 559838310}
   - component: {fileID: 559838311}
+  - component: {fileID: 559838312}
   m_Layer: 6
   m_Name: Graphic
   m_TagString: Untagged
@@ -689,6 +694,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &559838312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559838309}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b377d73649174f468df3c298da21af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 8
+  lightHitPoints: 10
+  heavyHitPoints: 25
+  scorePickupPrefab: {fileID: 112005996814551793, guid: 7b03be5b57de78f4ca0130ed21ebab05, type: 3}
+  pickupDropValue: 50
 --- !u!1 &607902968
 GameObject:
   m_ObjectHideFlags: 0
@@ -2022,6 +2044,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1442797700 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 86587495617571661, guid: 3cbe6407c3cf6494bb81b593d4dc2ea1, type: 3}
+  m_PrefabInstance: {fileID: 8401623070869260993}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1471053338
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2233,7 +2260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8516c3dfdff5d3845a3e2b9e4881a994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1442797700}
   firePoint: {fileID: 1220608837}
   bulletPrefab: {fileID: 4543454869500273444, guid: 394416e10eeb5164d801c5dce322d88d, type: 3}
   bulletForce: 20
@@ -2376,7 +2403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d26ebfe73d5cf334585fd900559f633a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scorePickupPrefab: {fileID: 0}
+  scorePickupPrefab: {fileID: 112005996814551793, guid: 7b03be5b57de78f4ca0130ed21ebab05, type: 3}
   pickupDropValue: 50
 --- !u!61 &1639807701
 BoxCollider2D:

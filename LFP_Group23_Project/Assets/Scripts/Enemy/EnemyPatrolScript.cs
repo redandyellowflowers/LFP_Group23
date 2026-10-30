@@ -11,6 +11,11 @@ public class EnemyPatrolScript : MonoBehaviour
     private Rigidbody2D rb;
     private Transform currentPoint;
 
+    [Header("Drop")]
+    public GameObject scorePickupPrefab;
+    public int pickupDropValue = 50;
+
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -52,4 +57,14 @@ public class EnemyPatrolScript : MonoBehaviour
         Gizmos.DrawWireSphere(pointB.transform.position, 0.5f);
         Gizmos.DrawLine(pointA.transform.position, pointB.transform.position);
     }
+
+
+    void SpawnPickup()
+    {
+        if (scorePickupPrefab == null) return;
+        GameObject go = Instantiate(scorePickupPrefab, transform.position, Quaternion.identity);
+        var pickup = go.GetComponent<ScorePickup>();
+        if (pickup != null) pickup.scoreValue = pickupDropValue;
+    }
+
 }

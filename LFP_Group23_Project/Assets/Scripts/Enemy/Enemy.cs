@@ -4,6 +4,10 @@ public class Enemy : MonoBehaviour
 {
     public int health;
 
+    [Header("Score Values")]
+    public int lightHitPoints = 10;
+    public int heavyHitPoints = 25;
+
     [Header("Drop")]
     public GameObject scorePickupPrefab;
     public int pickupDropValue = 50;

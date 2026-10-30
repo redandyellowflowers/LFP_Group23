@@ -7,7 +7,7 @@ public class WeakPointScript : MonoBehaviour
 
     [Header("Drop")]
     public GameObject scorePickupPrefab; 
-    public int pickupDropValue = 50;      
+    public int pickupDropValue = 50; 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,7 +33,6 @@ public class WeakPointScript : MonoBehaviour
         }
     }
 
-    // Spawn the pickup at the parent enemy's position
     void SpawnPickup()
     {
         if (scorePickupPrefab == null) return;

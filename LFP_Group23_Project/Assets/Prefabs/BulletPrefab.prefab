@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2294893351328126340}
   - component: {fileID: 8497371870796404138}
   - component: {fileID: 5982307480318222452}
+  - component: {fileID: 1979521828952737657}
   m_Layer: 7
   m_Name: BulletPrefab
   m_TagString: Untagged
@@ -112,6 +113,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBeforeSelfDestroy: 2
   spawnPoint: {fileID: 0}
+--- !u!114 &1979521828952737657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4543454869500273444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804eeb64c953425468b28cb2099941f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  damageToPlayer: 10
+  damageToEnemy: 15
+  lifeTime: 5
 --- !u!1 &6697871125648100834
 GameObject:
   m_ObjectHideFlags: 0

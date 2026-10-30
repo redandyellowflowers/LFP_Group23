@@ -3,15 +3,15 @@ using UnityEngine;
 
 public class PlayerDeflect : MonoBehaviour
 {
-    [Header("Deflect")]
-    [Tooltip("Radius around the cursor where bullets get deflected.")]
-    public float deflectRadius = 0.75f;
+    [Header("Destroy Bullets")]
+    [Tooltip("Radius around the cursor where bullets get destroyed.")]
+    public float destroyRadius = 0.75f;
 
     [Tooltip("What layers count as projectiles.")]
     public LayerMask whatIsProjectiles;
 
     [Header("Reward")]
-    public int scorePerDeflect = 25;
+    public int scorePerBullet = 25;
 
     private Camera cam;
 
@@ -27,29 +27,25 @@ public class PlayerDeflect : MonoBehaviour
         Vector3 mouseWorld = cam.ScreenToWorldPoint(Input.mousePosition);
         mouseWorld.z = 0f;
 
-        Collider2D[] hits = Physics2D.OverlapCircleAll(mouseWorld, deflectRadius, whatIsProjectiles);
-        HashSet<Projectile> caught = new HashSet<Projectile>();
+        Collider2D[] hits = Physics2D.OverlapCircleAll(mouseWorld, destroyRadius, whatIsProjectiles);
+        HashSet<ProjectileScript> caught = new HashSet<ProjectileScript>();
 
         foreach (var c in hits)
         {
-            Projectile p = c.GetComponent<Projectile>();
-            if (p != null && !p.IsDeflected)
+            ProjectileScript p = c.GetComponent<ProjectileScript>();
+            if (p != null)
                 caught.Add(p);
         }
 
         if (caught.Count == 0) return;
 
-        // Deflect direction = away from the player, toward the cursor
-        Vector2 dir = ((Vector2)mouseWorld - (Vector2)transform.position).normalized;
-        if (dir.sqrMagnitude < 0.0001f) dir = Vector2.right;
-
         foreach (var p in caught)
-            p.Deflect(dir);
+            Destroy(p.gameObject);
 
         if (ScoreManager.Instance != null)
-            ScoreManager.Instance.AddScore(scorePerDeflect);
+            ScoreManager.Instance.AddScore(scorePerBullet * caught.Count);
 
-        Debug.Log($"[PlayerRightClickDeflect] Deflected {caught.Count} bullet(s). +{scorePerDeflect} coins");
+        Debug.Log($"[PlayerDeflect] Destroyed {caught.Count} bullet(s). +{scorePerBullet * caught.Count} coins");
     }
 
     void OnDrawGizmosSelected()
@@ -59,7 +55,7 @@ public class PlayerDeflect : MonoBehaviour
         {
             Vector3 mouseWorld = cam.ScreenToWorldPoint(Input.mousePosition);
             mouseWorld.z = 0f;
-            Gizmos.DrawWireSphere(mouseWorld, deflectRadius);
+            Gizmos.DrawWireSphere(mouseWorld, destroyRadius);
         }
     }
 }

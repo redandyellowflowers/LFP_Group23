@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 6795629155799681394}
   - component: {fileID: 4756879282831177206}
   - component: {fileID: -4360735626145047111}
+  - component: {fileID: 4588870417819906874}
   m_Layer: 0
   m_Name: CharacterController
   m_TagString: Player
@@ -97,7 +98,6 @@ MonoBehaviour:
   flipSprite: 1
   crosshair: {fileID: 0}
   crosshairOffset: {x: 0, y: 0, z: 0}
-  hideSystemCursor: 0
   whatIsEnemies:
     serializedVersion: 2
     m_Bits: 64
@@ -232,6 +232,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc472e09ed8880740b823604e62b598e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4588870417819906874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86587495617571661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68a69cda11a0aea4393247d92c118926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyRadius: 1
+  whatIsProjectiles:
+    serializedVersion: 2
+    m_Bits: 128
+  scorePerBullet: 25
 --- !u!1 &2095093629127262087
 GameObject:
   m_ObjectHideFlags: 0

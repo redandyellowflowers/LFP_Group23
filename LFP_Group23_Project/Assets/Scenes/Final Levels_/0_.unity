@@ -1782,7 +1782,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1191433749
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3267,8 +3267,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: reach this symbol and press the <color=#14FF00>e</color> key to complete
+  m_text: 'reach this symbol and press the <color=#14FF00>e</color> key to complete
     the level.
+
+
+    more tutorial tabs to be added based on levell...'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 22966ed4b2accbc6dd46dc36d222d833, type: 2}
   m_sharedMaterial: {fileID: 5192293977591498944, guid: 22966ed4b2accbc6dd46dc36d222d833, type: 2}

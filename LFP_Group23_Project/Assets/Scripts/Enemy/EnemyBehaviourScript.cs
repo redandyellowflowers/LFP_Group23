@@ -34,7 +34,7 @@ public class EnemyBehaviourScript : MonoBehaviour
         if (player == null) return;
         playerPos = player.transform.position;
         Aim();
-        Shooting();
+        //Shooting();
     }
 
     public void Aim()
@@ -46,6 +46,8 @@ public class EnemyBehaviourScript : MonoBehaviour
             Vector2 lookDirection = playerPos - weaponRigidbody.position;
             float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
             weaponRigidbody.rotation = angle;
+
+            Shooting();
         }
     }
 

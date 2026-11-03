@@ -1,8 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEngine.GraphicsBuffer;
 
 public class ProjectileScript : MonoBehaviour
 {
+    private GameObject player;
+
     public int timeBeforeSelfDestroy = 1;
 
     public GameObject spawnPoint;
@@ -21,6 +24,11 @@ public class ProjectileScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        player = GameObject.FindWithTag("Player");
+
+        Vector3 direction = player.transform.position - transform.position;
+        //transform.right = direction;
+
         Destroy(gameObject, timeBeforeSelfDestroy);
     }
 

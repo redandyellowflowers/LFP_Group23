@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 91c0c13fb0a785ed350d6da3e32b0303
+AssetOrigin:
+  serializedVersion: 1
+  productId: 412096
+  packageName: Pixel UI Sci-Fi Free - HUD Kit Sampler
+  packageVersion: 1.0.4
+  assetPath: Assets/PixelUISciFiFree/Sprites/themes/cyan/window.png
+  uploadId: 1012130
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -128,10 +135,3 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 412096
-  packageName: Pixel UI Sci-Fi Free - HUD Kit Sampler
-  packageVersion: 1.0.4
-  assetPath: Assets/PixelUISciFiFree/Sprites/themes/cyan/window.png
-  uploadId: 1012130

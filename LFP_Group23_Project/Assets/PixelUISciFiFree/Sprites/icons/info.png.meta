@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 5d95dc65b5bb33ba4988f07a9ed7c901
+AssetOrigin:
+  serializedVersion: 1
+  productId: 412096
+  packageName: Pixel UI Sci-Fi Free - HUD Kit Sampler
+  packageVersion: 1.0.4
+  assetPath: Assets/PixelUISciFiFree/Sprites/icons/info.png
+  uploadId: 1012130
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -128,10 +135,3 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 412096
-  packageName: Pixel UI Sci-Fi Free - HUD Kit Sampler
-  packageVersion: 1.0.4
-  assetPath: Assets/PixelUISciFiFree/Sprites/icons/info.png
-  uploadId: 1012130

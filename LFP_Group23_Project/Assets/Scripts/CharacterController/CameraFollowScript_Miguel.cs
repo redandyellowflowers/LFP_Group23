@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CameraFollowScript : MonoBehaviour
+public class CameraFollowScript_Miguel : MonoBehaviour
 {
     private GameObject player;
     private Camera cam;
@@ -24,7 +24,7 @@ public class CameraFollowScript : MonoBehaviour
     {
         if (player == null)
         {
-            gameObject.GetComponent<CameraFollowScript>().enabled = false;
+            gameObject.GetComponent<CameraFollowScript_Miguel>().enabled = false;
         }
         else
         {

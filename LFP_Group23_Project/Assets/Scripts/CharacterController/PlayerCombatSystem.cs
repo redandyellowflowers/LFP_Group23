@@ -32,6 +32,12 @@ public class PlayerCombatSystem : MonoBehaviour
     private float swipeStartTime;
     private List<Vector2> swipePoints = new List<Vector2>();
 
+    private void Awake()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
     void Start()
     {
         cam = Camera.main;

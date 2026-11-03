@@ -10,7 +10,9 @@ public class CharacterControllerScript_Miguel : MonoBehaviour
     public float runSpeed = 40f;
 
     private float horizontalMove = 0f;
-    private bool jump = false;
+    public bool jump = false;
+
+    public Animator animator;
 
     private void Awake()
     {
@@ -30,13 +32,15 @@ public class CharacterControllerScript_Miguel : MonoBehaviour
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
-        if (Input.GetKeyDown(KeyCode.W)) { jump = true; }
+        if (Input.GetKeyDown(KeyCode.W)) { jump = true; if (jump == true) { animator.SetTrigger("Jump"); } }
 
 
-        if (this.gameObject.transform.position.y <= -20f)
+        if (this.gameObject.transform.position.y <= -40f)
         {
             gameObject.transform.position = spawnPoint.transform.position;
         }
+
+        //animator.SetBool("Jump", jump);
     }
 
     //Is called a fixed number of times per second.

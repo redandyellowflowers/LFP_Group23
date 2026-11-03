@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 7c8dadf8ac0dd52b3ea9faae65cbb3c8
+AssetOrigin:
+  serializedVersion: 1
+  productId: 412096
+  packageName: Pixel UI Sci-Fi Free - HUD Kit Sampler
+  packageVersion: 1.0.4
+  assetPath: Assets/PixelUISciFiFree/Sprites/hud/reticle_lock.png
+  uploadId: 1012130
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -128,10 +135,3 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 412096
-  packageName: Pixel UI Sci-Fi Free - HUD Kit Sampler
-  packageVersion: 1.0.4
-  assetPath: Assets/PixelUISciFiFree/Sprites/hud/reticle_lock.png
-  uploadId: 1012130

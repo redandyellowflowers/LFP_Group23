@@ -34,6 +34,8 @@ public class WeakPointScript : MonoBehaviour
             GameObject DamageParticle = Instantiate(damageParticle, gameObject.transform.position, Quaternion.Euler(0, 0, Random.Range(0, 360)));
             Destroy(DamageParticle, 1f);
 
+            FindAnyObjectByType<AudioManagerScript>().Play("Points");
+
             Destroy(gameObject.transform.parent.gameObject, .195f);
         }
     }

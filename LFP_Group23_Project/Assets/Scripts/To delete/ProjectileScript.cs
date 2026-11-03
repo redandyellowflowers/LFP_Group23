@@ -10,6 +10,8 @@ public class ProjectileScript : MonoBehaviour
 
     public GameObject spawnPoint;
 
+    public GameObject damageParticle;
+
     private void Awake()
     {
         spawnPoint = GameObject.Find("SpawnPoint");
@@ -29,6 +31,9 @@ public class ProjectileScript : MonoBehaviour
         Vector3 direction = player.transform.position - transform.position;
         //transform.right = direction;
 
+        GameObject DamageParticle = Instantiate(damageParticle, gameObject.transform.position, Quaternion.Euler(0, 0, Random.Range(0, 360)));
+        Destroy(DamageParticle, 1f);
+
         Destroy(gameObject, timeBeforeSelfDestroy);
     }
 
@@ -37,6 +42,9 @@ public class ProjectileScript : MonoBehaviour
         if (collision.collider.CompareTag("Player"))
         {
             collision.gameObject.transform.position = spawnPoint.transform.position;
+
+            FindAnyObjectByType<AudioManagerScript>().Play("Respawn");
+
             //SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
             //Destroy(gameObject, .2f);
         }

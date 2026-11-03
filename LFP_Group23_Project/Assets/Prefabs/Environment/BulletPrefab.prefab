@@ -162,6 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBeforeSelfDestroy: 3
   spawnPoint: {fileID: 0}
+  damageParticle: {fileID: 3006233795538741184, guid: 59f8d584f5ee3aa4f9851d01e4811e45, type: 3}
 --- !u!114 &-7744681148325559283
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -31,6 +31,7 @@ public class ScorePickup : MonoBehaviour
             {
                 if (ScoreManager.Instance != null)
                     ScoreManager.Instance.AddScore(scoreValue);
+                FindAnyObjectByType<AudioManagerScript>().Play("Points");
                 Destroy(gameObject);
             }
         }

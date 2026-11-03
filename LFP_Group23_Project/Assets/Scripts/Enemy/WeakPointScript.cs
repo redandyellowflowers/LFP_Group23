@@ -7,7 +7,9 @@ public class WeakPointScript : MonoBehaviour
 
     [Header("Drop")]
     public GameObject scorePickupPrefab; 
-    public int pickupDropValue = 50; 
+    public int pickupDropValue = 50;
+
+    public GameObject damageParticle;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,6 +30,9 @@ public class WeakPointScript : MonoBehaviour
             //enemyDestroyed.Play();
 
             SpawnPickup();
+
+            GameObject DamageParticle = Instantiate(damageParticle, gameObject.transform.position, Quaternion.Euler(0, 0, Random.Range(0, 360)));
+            Destroy(DamageParticle, 1f);
 
             Destroy(gameObject.transform.parent.gameObject, .195f);
         }

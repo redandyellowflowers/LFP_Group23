@@ -37,6 +37,7 @@ public class CharacterControllerScript_Miguel : MonoBehaviour
 
         if (this.gameObject.transform.position.y <= -40f)
         {
+            FindAnyObjectByType<AudioManagerScript>().Play("Respawn");
             gameObject.transform.position = spawnPoint.transform.position;
         }
 

@@ -42,6 +42,9 @@ public class PlayerDeflect : MonoBehaviour
         foreach (var p in caught)
             Destroy(p.gameObject);
 
+        foreach (var p in caught)
+            FindAnyObjectByType<AudioManagerScript>().Play("Points");
+
         if (ScoreManager.Instance != null)
             ScoreManager.Instance.AddScore(scorePerBullet * caught.Count);
 

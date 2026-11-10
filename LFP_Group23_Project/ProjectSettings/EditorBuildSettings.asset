@@ -6,25 +6,25 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/main Menu.unity
-    guid: 5b77ccc554afab7499c581f017cf3d81
+    path: Assets/Scenes/Final Levels_/_0_Menu_.unity
+    guid: 3727bf7ff1e67144f9d15296106dec6c
   - enabled: 1
-    path: Assets/Scenes/Levels.unity
-    guid: cf7e5557faac6354c99f1d13a5ee538e
+    path: Assets/Scenes/Final Levels_/_Levels.unity
+    guid: 257e890bb44445e4e95d633a7b17f45f
   - enabled: 1
-    path: Assets/Scenes/1.unity
-    guid: 95ce2aa9472f5974d9ee9dbe4cad04f4
+    path: Assets/Scenes/Final Levels_/_Tutorial 1.unity
+    guid: d428513eabb88a149bd22cba380090c7
   - enabled: 1
-    path: Assets/Scenes/2.unity
-    guid: 6d0b4f7abcea637499ddc3d8d96e2bf1
+    path: Assets/Scenes/Final Levels_/_Tutorial 2.unity
+    guid: aa654e196b1e97249830eb980fd90172
   - enabled: 1
-    path: Assets/Scenes/2 1.unity
-    guid: 37e38bead7cae69498898f18c01511c1
+    path: Assets/Scenes/Final Levels_/_Tutorial 3.unity
+    guid: dbebf34f0eba59444835324063429ca6
+  - enabled: 1
+    path: Assets/Scenes/Final Levels_/Level 1_.unity
+    guid: d5bbf7d85eca2fc4a8f6fe6e8e7ac9a6
   - enabled: 1
     path: Assets/Scenes/ShopScene.unity
     guid: b2d6468aa2ca1fc40a70c0e7fb709da6
-  - enabled: 1
-    path: Assets/Scenes/3.unity
-    guid: 8d53b78f7c9402f4789e7cdc0cd68834
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

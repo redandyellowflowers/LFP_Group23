@@ -121,7 +121,7 @@ MonoBehaviour:
   pointA: {fileID: 3291304865398024878}
   pointB: {fileID: 1050972977368535100}
   speed: 5
-  scorePickupPrefab: {fileID: 0}
+  scorePickupPrefab: {fileID: 112005996814551793, guid: 7b03be5b57de78f4ca0130ed21ebab05, type: 3}
   pickupDropValue: 50
 --- !u!50 &3628228801836701931
 Rigidbody2D:
@@ -178,7 +178,7 @@ MonoBehaviour:
   health: 10
   lightHitPoints: 20
   heavyHitPoints: 25
-  scorePickupPrefab: {fileID: 0}
+  scorePickupPrefab: {fileID: 112005996814551793, guid: 7b03be5b57de78f4ca0130ed21ebab05, type: 3}
   pickupDropValue: 50
 --- !u!1 &3288205553493565030
 GameObject:
@@ -395,6 +395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scorePickupPrefab: {fileID: 112005996814551793, guid: 7b03be5b57de78f4ca0130ed21ebab05, type: 3}
   pickupDropValue: 50
+  damageParticle: {fileID: 0}
 --- !u!1 &4823002580626260141
 GameObject:
   m_ObjectHideFlags: 0

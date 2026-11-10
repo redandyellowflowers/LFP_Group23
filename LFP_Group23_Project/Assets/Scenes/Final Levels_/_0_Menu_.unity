@@ -274,16 +274,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5620359087476705766, guid: 47d73cbb855c40649af1f10a7269f115, type: 3}
       propertyPath: allPowerUps.Array.size
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5620359087476705766, guid: 47d73cbb855c40649af1f10a7269f115, type: 3}
       propertyPath: ownedPowerUps.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5620359087476705766, guid: 47d73cbb855c40649af1f10a7269f115, type: 3}
+      propertyPath: 'allPowerUps.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 9f319412c7bfd6047b414c2af92ea41c, type: 2}
+    - target: {fileID: 5620359087476705766, guid: 47d73cbb855c40649af1f10a7269f115, type: 3}
       propertyPath: 'allPowerUps.Array.data[2]'
       value: 
-      objectReference: {fileID: 11400000, guid: 2dd23997178d368419c499d3a7b1985f, type: 2}
+      objectReference: {fileID: 11400000, guid: 74f4f6107979f6946853415f6fe71eb0, type: 2}
     - target: {fileID: 5620359087476705766, guid: 47d73cbb855c40649af1f10a7269f115, type: 3}
       propertyPath: 'allPowerUps.Array.data[3]'
       value: 
@@ -1018,6 +1022,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 0}
   rules: {fileID: 0}
+  optionsMenu: {fileID: 0}
 --- !u!114 &1624399658
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -28,7 +28,13 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScore(int amount)
     {
-        score += amount;
+        float mult = (PowerUpManager.Instance != null)
+            ? PowerUpManager.Instance.GetMultiplier(PowerUpType.ScoreMultiplier)
+            : 1f;
+
+        int scaled = Mathf.RoundToInt(amount * mult);
+
+        score += scaled;
         if (score > highScore)
         {
             highScore = score;

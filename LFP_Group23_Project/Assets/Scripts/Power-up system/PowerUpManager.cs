@@ -31,22 +31,24 @@ public class PowerUpManager : MonoBehaviour
     {
         if (data == null) return;
         ownedPowerUps.Add(data);
-        Debug.Log($"[PowerUpManager] Added '{data.powerUpName}' type={data.type} amount={data.amount}"); // NEW
+        Debug.Log($"[PowerUpManager] Added '{data.powerUpName}' type={data.type} amount={data.amount}"); 
         ApplyToAllPlayersInScene();
     }
 
     public void ClearPowerUps() => ownedPowerUps.Clear();
 
-    // Returns the combined multiplier for a given type. E.g. if the player has
-    // two "+10% damage" power-ups, this returns 1.20.
     public float GetMultiplier(PowerUpType type)
     {
         float total = 0f;
         foreach (var p in ownedPowerUps)
             if (p.type == type) total += p.amount;
+
+        // Cap coin multiplier bonus at +50%
+        if (type == PowerUpType.ScoreMultiplier)
+            total = Mathf.Min(total, 0.5f);
+
         return 1f + total;
     }
-
     public void ApplyToAllPlayersInScene()
     {
         var player = GameObject.FindWithTag("Player");
@@ -73,7 +75,7 @@ public class PowerUpManager : MonoBehaviour
             int totalArmor = 0;
             foreach (var p in ownedPowerUps)
                 if (p.type == PowerUpType.Armor)
-                    totalArmor += Mathf.RoundToInt(p.amount);  // 1 = +1 armor
+                    totalArmor += Mathf.RoundToInt(p.amount);  
             health.armor = totalArmor;
         }
     }

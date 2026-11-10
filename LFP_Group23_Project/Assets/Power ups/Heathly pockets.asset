@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerUpName: 'Healthy pockets '
   description: Increase in the coin
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: d2c0dc76eca05bb4eb4f3fc4a37f258d, type: 3}
   cost: 50
-  rarity: 1
-  type: 5
-  amount: 0.1
+  type: 2
+  amount: 0.5

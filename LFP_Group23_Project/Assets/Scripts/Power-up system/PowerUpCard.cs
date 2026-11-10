@@ -21,9 +21,6 @@ public class PowerUpCard : MonoBehaviour
         descText.text = d.description;
         costText.text = d.cost + " pts";
 
-        if (backgroundImage != null)
-            backgroundImage.color = d.RarityColor;
-
         buyButton.interactable = canAfford;
         buyButton.onClick.RemoveAllListeners();
         buyButton.onClick.AddListener(() => onBuy?.Invoke());

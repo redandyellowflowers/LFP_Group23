@@ -426,10 +426,10 @@ MonoBehaviour:
   lastLevel: 0
   InteractionPrompt: {fileID: 1615921127}
   sceneName: main Menu
---- !u!114 &108819416 stripped
+--- !u!114 &161894038 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9028365949834334605, guid: 23a2383b9d9d8614f9a8db05e59333e6, type: 3}
-  m_PrefabInstance: {fileID: 1249530301}
+  m_CorrespondingSourceObject: {fileID: 127981406576339321, guid: 90a856f9a4b2fd84c9576b79a6481b5d, type: 3}
+  m_PrefabInstance: {fileID: 1650879815}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -1468,7 +1468,7 @@ PrefabInstance:
     - target: {fileID: 2663855667255753191, guid: b834ba62fafad7c4e8684c30fbaed9d3, type: 3}
       propertyPath: scoreText
       value: 
-      objectReference: {fileID: 108819416}
+      objectReference: {fileID: 161894038}
     - target: {fileID: 5517420920606600198, guid: b834ba62fafad7c4e8684c30fbaed9d3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

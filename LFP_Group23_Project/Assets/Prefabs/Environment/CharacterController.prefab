@@ -54,7 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 8379162513469794250}
   spawnPoint: {fileID: 8847031872610314728, guid: cf34fa04fb6fa6c47831c0bf2f5b6e48, type: 3}
-  runSpeed: 75
+  runSpeed: 80
   jump: 0
   animator: {fileID: 4115353704136802086}
 --- !u!114 &8379162513469794250

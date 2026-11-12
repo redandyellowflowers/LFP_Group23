@@ -15,12 +15,13 @@ public class PowerUpShop : MonoBehaviour
     public GameObject offerCardPrefab;
 
     [Header("Behaviour")]
-    public int offersToShow = 3;
+    public int offersToShow = 2;
     public bool allowReroll = true;
     public int rerollCost = 10;
 
     private List<PowerUpData> currentOffers = new List<PowerUpData>();
     private int availableScore;
+    
 
     void Start()
     {

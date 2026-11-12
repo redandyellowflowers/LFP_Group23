@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerUpName: Swift
   description: Increases your speed
-  icon: {fileID: 0}
+  icon: {fileID: -6324106167696351281, guid: 6e17895d84dd9cd48b8e0bbaf0e674f5, type: 3}
   cost: 100
-  rarity: 0
   type: 0
   amount: 0.1

@@ -6,6 +6,7 @@ public class UIScript : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject rules;
+    [SerializeField] GameObject optionsMenu;
 
     void Update()
     {
@@ -30,6 +31,21 @@ public class UIScript : MonoBehaviour
     public void Resume()
     {
         pauseMenu.SetActive(false);
+    }
+
+    public void Options()
+    {
+        optionsMenu.SetActive(true);
+
+        pauseMenu.SetActive(false);
+    }
+
+    public void exit2()
+    {
+        optionsMenu.SetActive(false);
+
+        pauseMenu.SetActive(true);
+
     }
 
     public void exit()
